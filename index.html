@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ventera Partners — Strategic Fundraising Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:       #0B1628;
+    --navy-mid:   #1A3060;
+    --navy-deep:  #112447;
+    --gold:       #C9A84C;
+    --gold-light: #DDB96A;
+    --steel:      #7A8FA8;
+    --ice:        #D8E2F0;
+    --off-white:  #F0F4FA;
+    --white:      #FFFFFF;
+    --font-sans:  'IBM Plex Sans', system-ui, sans-serif;
+    --font-mono:  'IBM Plex Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--white);
+    color: var(--navy);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 68px;
+    background: rgba(11, 22, 40, 0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+
+  .nav-links a {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--ice);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+  .nav-cta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy) !important;
+    background: var(--gold);
+    padding: 9px 20px;
+    border-radius: 2px;
+    opacity: 1 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 48px 80px;
+    gap: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-left { position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-size: clamp(34px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+  }
+  h1 em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--ice);
+    opacity: 0.75;
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: 44px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 14px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-ghost {
+    font-size: 13px;
+    color: var(--ice);
+    text-decoration: none;
+    opacity: 0.55;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-ghost::after { content: '→'; }
+  .btn-ghost:hover { opacity: 1; }
+
+  .hero-right {
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 4px;
+    padding: 28px 24px;
+  }
+  .stat-card.wide {
+    grid-column: 1 / -1;
+    background: rgba(201,168,76,0.07);
+    border-color: rgba(201,168,76,0.28);
+  }
+
+  .stat-num {
+    font-family: var(--font-mono);
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .stat-card.wide .stat-num { font-size: 52px; }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--ice);
+    opacity: 0.6;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .stat-sub {
+    font-size: 13px;
+    color: var(--ice);
+    opacity: 0.45;
+    margin-top: 5px;
+    font-style: italic;
+  }
+
+  /* ── INVESTABLE SECTION ── */
+  #investable {
+    background: var(--white);
+    padding: 96px 48px;
+  }
+
+  .investable-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .investable-left h2 {
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 24px;
+  }
+  .investable-left h2 strong { font-weight: 600; }
+
+  .investable-left p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--steel);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .investable-left p strong {
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .investable-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .diff-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--off-white);
+    align-items: start;
+  }
+  .diff-item:first-child { padding-top: 0; }
+  .diff-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .diff-icon {
+    width: 40px; height: 40px;
+    border-radius: 2px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .diff-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+  .diff-item h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .diff-item p {
+    font-size: 14px;
+    color: var(--steel);
+    line-height: 1.65;
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 96px 48px; }
+
+  .section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  h2 {
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  h2 strong { font-weight: 600; }
+
+  .section-lead {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--steel);
+    line-height: 1.8;
+    max-width: 560px;
+    margin-bottom: 52px;
+  }
+
+  /* ── PROCESS ── */
+  #process { background: var(--off-white); }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--ice);
+    border: 1px solid var(--ice);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .process-step {
+    background: var(--white);
+    padding: 36px 28px;
+  }
+
+  .process-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 18px;
+    opacity: 0.8;
+  }
+
+  .process-step h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .process-step p {
+    font-size: 13px;
+    color: var(--steel);
+    line-height: 1.65;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--navy); padding: 96px 48px; }
+
+  #services h2 { color: var(--white); }
+  #services .section-lead { color: var(--ice); opacity: 0.65; }
+
+  /* Tab navigation */
+  .service-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .tab-btn {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ice);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 12px 24px;
+    cursor: pointer;
+    opacity: 0.45;
+    transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+    margin-bottom: -1px;
+  }
+  .tab-btn.active { opacity: 1; color: var(--gold); border-bottom-color: var(--gold); }
+  .tab-btn:hover { opacity: 0.75; }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Core products grid */
+  .core-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .core-grid-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .product-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 4px;
+    padding: 28px 24px;
+    transition: border-color 0.2s, background 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-card:hover {
+    border-color: rgba(201,168,76,0.28);
+    background: rgba(255,255,255,0.06);
+  }
+
+  .product-card.sprint {
+    background: rgba(201,168,76,0.08);
+    border-color: rgba(201,168,76,0.3);
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    padding: 36px 36px;
+  }
+
+  .product-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 14px;
+  }
+
+  .product-card h3 {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .product-price {
+    font-family: var(--font-mono);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--gold);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .product-price span {
+    font-size: 12px;
+    color: var(--steel);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    letter-spacing: 0;
+  }
+
+  .product-desc {
+    font-size: 13px;
+    color: var(--ice);
+    opacity: 0.6;
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 18px;
+  }
+
+  .product-includes {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  .product-includes li {
+    font-size: 12px;
+    color: var(--ice);
+    opacity: 0.65;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .product-includes li::before {
+    content: '—';
+    color: var(--gold);
+    opacity: 0.45;
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    margin-top: 2px;
+  }
+
+  .product-cta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: auto;
+    transition: gap 0.2s;
+  }
+  .product-cta::after { content: '→'; }
+  .product-cta:hover { gap: 11px; }
+
+  /* Sprint specifics */
+  .sprint-left .sprint-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+  }
+
+  .sprint-savings {
+    font-size: 12px;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-top: -10px;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  /* Retainer cards */
+  .retainer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .retainer-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 4px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s;
+  }
+  .retainer-card:hover { border-color: rgba(201,168,76,0.3); }
+
+  .retainer-scope {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+  }
+
+  .scope-tag {
+    font-size: 11px;
+    color: var(--ice);
+    opacity: 0.5;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 3px 9px;
+    border-radius: 2px;
+  }
+
+  /* Payment note */
+  .payment-note {
+    margin-top: 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .payment-note-icon {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    color: var(--gold);
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  .payment-note p {
+    font-size: 13px;
+    color: var(--ice);
+    opacity: 0.55;
+    line-height: 1.6;
+  }
+
+  /* ── WHY ── */
+  #why { background: var(--white); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .why-reasons { display: flex; flex-direction: column; }
+
+  .why-item {
+    padding: 26px 0;
+    border-bottom: 1px solid var(--off-white);
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .why-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    padding-top: 3px;
+  }
+  .why-item h3 { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .why-item p { font-size: 13px; color: var(--steel); line-height: 1.7; }
+
+  .why-right {
+    background: var(--navy);
+    border-radius: 4px;
+    padding: 44px 40px;
+    position: sticky;
+    top: 88px;
+  }
+
+  .spotlight-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    opacity: 0.7;
+  }
+
+  .spotlight-quote {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.75;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .spotlight-quote strong { font-style: normal; font-weight: 600; color: var(--gold); }
+
+  .spotlight-stages {
+    display: flex;
+    margin-bottom: 28px;
+  }
+  .stage {
+    flex: 1;
+    text-align: center;
+    padding: 14px 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+  .stage:not(:last-child) { border-right: none; }
+  .stage-label { font-family: var(--font-mono); font-size: 9px; color: var(--steel); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .stage-val { font-size: 14px; font-weight: 500; color: var(--white); }
+
+  .sector-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sector-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--steel);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  /* ── TRACK RECORD ── */
+  #track { background: var(--off-white); }
+
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .metric-box {
+    background: var(--white);
+    border: 1px solid var(--ice);
+    border-radius: 4px;
+    padding: 32px 28px;
+    border-top: 3px solid var(--gold);
+  }
+
+  .metric-num {
+    font-family: var(--font-mono);
+    font-size: 46px;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .metric-label { font-size: 13px; color: var(--steel); }
+  .metric-sub { font-size: 12px; color: var(--steel); opacity: 0.55; margin-top: 4px; font-style: italic; }
+
+  .track-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .track-card {
+    background: var(--white);
+    border: 1px solid var(--ice);
+    border-radius: 4px;
+    padding: 32px 28px;
+  }
+  .track-card h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy-mid); margin-bottom: 12px; }
+  .track-card p { font-size: 14px; color: var(--steel); line-height: 1.7; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--navy); }
+
+  #contact h2 { color: var(--white); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .contact-left p {
+    font-size: 15px;
+    color: var(--ice);
+    opacity: 0.65;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 14px; }
+
+  .contact-info-item { display: flex; gap: 14px; align-items: flex-start; }
+  .contact-info-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.65;
+    min-width: 56px;
+    padding-top: 2px;
+  }
+  .contact-info-val { font-size: 13px; color: var(--ice); opacity: 0.7; line-height: 1.6; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 14px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+  .form-group label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.65;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 2px;
+    padding: 11px 13px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .form-group select option { background: var(--navy-deep); color: var(--white); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: rgba(201,168,76,0.45); }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--steel); opacity: 0.45; }
+  .form-group textarea { min-height: 110px; resize: vertical; }
+
+  .form-submit {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-deep);
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .footer-logo {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ice);
+    opacity: 0.45;
+  }
+  .footer-logo span { color: var(--gold); opacity: 0.65; }
+
+  .footer-copy { font-size: 12px; color: var(--ice); opacity: 0.28; }
+
+  .footer-nav { display: flex; gap: 24px; }
+  .footer-nav a {
+    font-size: 12px;
+    color: var(--ice);
+    opacity: 0.38;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .footer-nav a:hover { opacity: 0.75; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+    .hero-right { grid-template-columns: 1fr 1fr; }
+    #investable, section { padding: 64px 24px; }
+    .investable-grid { grid-template-columns: 1fr; gap: 48px; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .core-grid { grid-template-columns: 1fr; }
+    .core-grid-bottom { grid-template-columns: 1fr; }
+    .product-card.sprint { grid-template-columns: 1fr; gap: 20px; }
+    .retainer-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-right { position: static; }
+    .metrics-row { grid-template-columns: 1fr; }
+    .track-detail { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Ventera<span>.</span>Partners</div>
+  <ul class="nav-links">
+    <li><a href="#investable">Why Ventera</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#track">Track Record</a></li>
+    <li><a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="nav-cta">Book a Call</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Fundraising Advisory · Pre-Seed to Series A</p>
+    <h1>We don't just help<br>you raise — we make<br>you <em>fundable.</em></h1>
+    <p class="hero-sub">Most founders raise only within the limits of what they can execute on their own. Ventera builds the strategy, narrative, and investor relationships that get companies to a level investors actually fund.</p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="btn-primary">Book a 1-on-1 Call</a>
+      <a href="#services" class="btn-ghost">See our services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-card wide">
+      <div class="stat-num">$100M+</div>
+      <div class="stat-label">Total Capital Raised</div>
+      <div class="stat-sub">Across 60+ rounds, Pre-Seed through Series A</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">40+</div>
+      <div class="stat-label">Companies Advised</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">60+</div>
+      <div class="stat-label">VC Relationships</div>
+      <div class="stat-sub">Canada · US · Silicon Valley</div>
+    </div>
+  </div>
+</section>
+
+<!-- THE DIFFERENCE: INVESTABLE -->
+<section id="investable">
+  <div class="investable-grid">
+    <div class="investable-left">
+      <p class="section-eyebrow">The Real Problem</p>
+      <h2>Most companies lack<br>the internal capacity<br>to <strong>raise well.</strong></h2>
+      <p>Fundraising is a discipline — and most founders are trying to run it for the first time, on top of building their company. The result isn't just a bad pitch. It's a raise that never reaches the right investors, at the right moment, with the right story.</p>
+      <p>Ventera doesn't just improve what you have. We build the infrastructure that <strong>makes your company investable</strong> — the narrative, the financial model, the investor strategy, the process — so that when you go to market, you're not limited by what you could figure out on your own.</p>
+      <p style="margin-bottom:0;">This is the difference between a company that raises, and a company that raises <strong>from the right people, at the right terms.</strong></p>
+    </div>
+    <div class="investable-right">
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div>
+          <h3>Investor-side judgment, not just founder coaching</h3>
+          <p>We've sat across the table. We know what makes a partner say yes in the partner meeting — and how most decks fail before they get there.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <h3>We close the gap between where you are and where you need to be</h3>
+          <p>Not just a review or a template. If you're not ready, we build the plan to get you there — milestone architecture, narrative pre-positioning, gap-closing roadmap.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <h3>Capital-type matching that most advisors miss</h3>
+          <p>Pitching the wrong type of investor wastes months. We match your stage, structure, and traction to the right capital — VC, angel, government, or growth equity.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <h3>Embedded through execution, not just strategy</h3>
+          <p>We don't hand you a deck and wish you luck. We manage the pipeline, coach the meetings, and navigate diligence — through close.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <p class="section-eyebrow">How We Work</p>
+  <h2>Strategy before market.<br><strong>Execution through close.</strong></h2>
+  <p class="section-lead">Every engagement starts with locking in structure — raise amount, valuation, investor targeting — before a single email goes out.</p>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="process-num">01 / Discovery</div>
+      <h3>Business Deep Dive</h3>
+      <p>Current stage, traction, capital requirements, key milestones. Understanding the full picture before strategy is set.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">02 / Strategy</div>
+      <h3>Raise Architecture</h3>
+      <p>Round size, valuation approach, use of funds, investor targets — locked in before outreach begins.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">03 / Materials</div>
+      <h3>Narrative & Numbers</h3>
+      <p>Pitch deck, financial model, data room, outreach system. Story and financials both built to hold under diligence.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">04 / Execution</div>
+      <h3>Outreach to Close</h3>
+      <p>Investor intros, meeting coaching, due diligence navigation, term negotiation — embedded through the finish line.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-eyebrow">Engagement Models</p>
+  <h2 style="color:var(--white)">Modular by design.<br><strong style="color:var(--gold)">Choose your depth.</strong></h2>
+  <p class="section-lead">Every product can be purchased on its own or bundled into the Sprint. Start where you need to — scale up as the raise progresses.</p>
+
+  <div class="service-tabs">
+    <button class="tab-btn active" onclick="switchTab('core', this)">Core Products</button>
+    <button class="tab-btn" onclick="switchTab('retainers', this)">Monthly Retainers</button>
+  </div>
+
+  <!-- CORE PRODUCTS -->
+  <div id="tab-core" class="tab-panel active">
+    <div class="core-grid">
+      <!-- Strategy Diagnostic -->
+      <div class="product-card">
+        <div class="product-tag">Start Here</div>
+        <h3>Strategy Diagnostic</h3>
+        <div class="product-price">$300</div>
+        <p class="product-desc">A 60–75 min diagnostic session with a written report. Cuts through what's actually holding your raise back.</p>
+        <ul class="product-includes">
+          <li>Readiness assessment & narrative-positioning gaps</li>
+          <li>5–8 targeted investor recommendations</li>
+          <li>Core blockers identified</li>
+          <li>30/60/90 action map</li>
+        </ul>
+        <a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="product-cta">Book now</a>
+      </div>
+
+      <!-- Mock Q&A -->
+      <div class="product-card">
+        <div class="product-tag">Preparation</div>
+        <h3>Mock Investor Q&amp;A</h3>
+        <div class="product-price">$500</div>
+        <p class="product-desc">A full adversarial partner-meeting simulation. Know every hard question before it gets asked in the real room.</p>
+        <ul class="product-includes">
+          <li>90-min adversarial mock partner meeting</li>
+          <li>Fully recorded session</li>
+          <li>Written objection-handling brief</li>
+        </ul>
+        <a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="product-cta">Get started</a>
+      </div>
+
+      <!-- Materials Review -->
+      <div class="product-card">
+        <div class="product-tag">Materials</div>
+        <h3>Materials Review</h3>
+        <div class="product-price">$1,500</div>
+        <p class="product-desc">Page-by-page review of your deck, model, and data room against investor logic. Up to 3 rounds until investor-ready.</p>
+        <ul class="product-includes">
+          <li>Prioritized fix list + specific annotations per round</li>
+          <li>Up to 3 review rounds</li>
+          <li>5 business days per round, async delivery</li>
+          <li>Deck, financial model, data room</li>
+        </ul>
+        <a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="product-cta">Get started</a>
+      </div>
+    </div>
+
+    <div class="core-grid-bottom" style="margin-top:16px; margin-bottom:16px;">
+      <!-- Pitch Deck Build -->
+      <div class="product-card">
+        <div class="product-tag">Build</div>
+        <h3>Pitch Deck Build</h3>
+        <div class="product-price">$1,500</div>
+        <p class="product-desc">Narrative framework, page-by-page copy, and visual design — built for investor logic, not founder comfort.</p>
+        <ul class="product-includes">
+          <li>Narrative framework design</li>
+          <li>Page-by-page copy</li>
+          <li>Visual design</li>
+          <li>2 revision rounds + 1 mock pitch run-through</li>
+        </ul>
+        <a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="product-cta">Get started</a>
+      </div>
+
+      <!-- Financial Model -->
+      <div class="product-card">
+        <div class="product-tag">Build</div>
+        <h3>Financial Model Build</h3>
+        <div class="product-price">$1,500</div>
+        <p class="product-desc">A model built to survive investor scrutiny — not just look right in a slide. Three-statement or driver-based.</p>
+        <ul class="product-includes">
+          <li>Three-statement or driver-based forecast</li>
+          <li>Assumptions memo</li>
+          <li>Scenario switching</li>
+          <li>"Defend the numbers" walkthrough</li>
+        </ul>
+        <a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="product-cta">Get started</a>
+      </div>
+
+      <!-- Investor Outreach System -->
+      <div class="product-card">
+        <div class="product-tag">Outreach</div>
+        <h3>Investor Outreach System</h3>
+        <div class="product-price">$2,000</div>
+        <p class="product-desc">300+ targeted, thesis-matched investors with a full outreach system. The founder sends — Ventera runs the back office.</p>
+        <ul class="product-includes">
+          <li>300+ investors, tiered by fit</li>
+          <li>Outreach email-sequence copywriting</li>
+          <li>CRM setup</li>
+          <li>8-week pipeline management</li>
+        </ul>
+        <a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="product-cta">Get started</a>
+      </div>
+    </div>
+
+    <!-- SPRINT -->
+    <div class="product-card sprint">
+      <div class="sprint-left">
+        <span class="sprint-badge">Most Comprehensive</span>
+        <h3 style="font-size:22px; margin-bottom:8px;">3-Month Fundraising Sprint</h3>
+        <div class="product-price" style="font-size:26px;">$4,500 <span>deposit + 5% success fee</span></div>
+        <p class="sprint-savings">À la carte value $5,500 — Sprint includes $1,000 bundle discount</p>
+        <p class="product-desc" style="font-size:14px; margin-bottom:24px;">Full-cycle fundraising management. Strategy through close. Every deliverable included, plus 3 months of embedded support — outreach management, meeting coaching, diligence, and negotiations.</p>
+        <a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="btn-primary" style="display:inline-flex; align-items:center; gap:8px;">Book a call →</a>
+      </div>
+      <div class="sprint-right">
+        <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); opacity:0.65; margin-bottom:14px;">Everything included</div>
+        <ul class="product-includes">
+          <li>Strategy Diagnostic + written report</li>
+          <li>Pitch Deck Build (narrative + copy + design)</li>
+          <li>Financial Model Build</li>
+          <li>Materials Review (up to 3 rounds)</li>
+          <li>Investor Outreach System (300+ matched investors)</li>
+          <li>Mock Investor Q&A (adversarial, recorded)</li>
+          <li>3 months end-to-end fundraising management</li>
+          <li>Investor intros from Ventera network</li>
+          <li>Meeting coaching & due diligence navigation</li>
+          <li>Term negotiation support through close</li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- RETAINERS -->
+  <div id="tab-retainers" class="tab-panel">
+    <div class="retainer-grid">
+      <div class="retainer-card">
+        <div class="product-tag">Not Yet Raising</div>
+        <h3 style="font-size:20px; font-weight:500; color:var(--white); margin-bottom:6px;">Pre-Readiness Retainer</h3>
+        <div class="product-price">$1,000–1,500 <span>/ month · 3-month minimum</span></div>
+        <p class="product-desc">For founders who don't yet have the traction or readiness to go to market. We build the plan, track progress, and get you there.</p>
+        <div class="retainer-scope">
+          <span class="scope-tag">2 strategy sessions / month</span>
+          <span class="scope-tag">Milestone tracking</span>
+          <span class="scope-tag">Gap-closing roadmap</span>
+          <span class="scope-tag">Written progress feedback</span>
+        </div>
+        <p style="font-size:12px; color:var(--steel); opacity:0.6; margin-bottom:24px; line-height:1.6;">No production deliverables (deck/model billed separately). Goal: reach fundraising-ready status and convert to a full engagement.</p>
+        <a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="product-cta">Let's talk</a>
+      </div>
+
+      <div class="retainer-card">
+        <div class="product-tag">Post-Raise / Ongoing</div>
+        <h3 style="font-size:20px; font-weight:500; color:var(--white); margin-bottom:6px;">Ongoing Strategic Retainer</h3>
+        <div class="product-price">$1,500–2,500 <span>/ month · 4-month minimum</span></div>
+        <p class="product-desc">For founders who have raised or completed their core deliverables. An embedded strategic partner for everything that comes next.</p>
+        <div class="retainer-scope">
+          <span class="scope-tag">2 strategy sessions / month</span>
+          <span class="scope-tag">Investor relations</span>
+          <span class="scope-tag">Next-round pre-positioning</span>
+          <span class="scope-tag">GTM planning</span>
+          <span class="scope-tag">Board prep</span>
+          <span class="scope-tag">Equity structure</span>
+          <span class="scope-tag">Capital-markets timing</span>
+          <span class="scope-tag">Written monthly feedback</span>
+        </div>
+        <a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="product-cta">Let's talk</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- WHY VENTERA -->
+<section id="why">
+  <div class="why-grid">
+    <div>
+      <p class="section-eyebrow">Why Ventera</p>
+      <h2>Judgment is the<br><strong>product.</strong></h2>
+      <p class="section-lead">Templates are free. What you can't replicate is a decade of watching how investors actually decide — and applying that to your specific raise.</p>
+      <div class="why-reasons">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div>
+            <h3>We make you investable — not just prepared</h3>
+            <p>Most advisors help you package what you already have. We close the gap between what you have and what investors need to fund you.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div>
+            <h3>Investor-informed — built on the other side of the table</h3>
+            <p>Active deal experience since 2017. We know how term sheets get approved and where most founders lose momentum before they get there.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div>
+            <h3>Story and numbers both hold</h3>
+            <p>Narrative and financials built together, stress-tested together. No disconnect between the pitch and the model under diligence.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div>
+            <h3>Founders come back round after round</h3>
+            <p>We stay embedded through execution, not just strategy. Multiple companies have engaged Ventera across 2–3 consecutive rounds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-right">
+      <div class="spotlight-label">Case Spotlight · Biotech Platform</div>
+      <p class="spotlight-quote">Advised across <strong>three consecutive rounds</strong> — Pre-Seed through Series A. First $1M close, $3M+ in government matching capital unlocked, then bridged to a <strong>$5–8M Series A</strong> backed by top-tier Silicon Valley investors. Full advisory from narrative to close at every stage.</p>
+      <div class="spotlight-stages">
+        <div class="stage">
+          <div class="stage-label">Pre-Seed</div>
+          <div class="stage-val">$1M</div>
+        </div>
+        <div class="stage">
+          <div class="stage-label">Gov Match</div>
+          <div class="stage-val">$3M+</div>
+        </div>
+        <div class="stage">
+          <div class="stage-label">Series A</div>
+          <div class="stage-val">$5–8M</div>
+        </div>
+      </div>
+      <div class="sector-list">
+        <span class="sector-tag">MedTech</span>
+        <span class="sector-tag">Intelligent Hardware</span>
+        <span class="sector-tag">Robotics</span>
+        <span class="sector-tag">AI & Software</span>
+        <span class="sector-tag">Cleantech</span>
+        <span class="sector-tag">Biotech</span>
+        <span class="sector-tag">B2B SaaS</span>
+        <span class="sector-tag">Digital Health</span>
+        <span class="sector-tag">Fintech</span>
+        <span class="sector-tag">Industrial Tech</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section id="track">
+  <p class="section-eyebrow">Track Record</p>
+  <h2>A decade of<br><strong>deal-making in North America.</strong></h2>
+  <p class="section-lead">Active deal experience since 2017 — across both the advisory and investment sides of the table.</p>
+
+  <div class="metrics-row">
+    <div class="metric-box">
+      <div class="metric-num">40+</div>
+      <div class="metric-label">Companies Advised</div>
+      <div class="metric-sub">Hardware, software, AI, biotech, and beyond</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-num">60+</div>
+      <div class="metric-label">Rounds Supported</div>
+      <div class="metric-sub">Multiple companies advised across 2–3 consecutive rounds</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-num">$100M+</div>
+      <div class="metric-label">Total Capital Raised</div>
+      <div class="metric-sub">$300K to $8M+ per raise</div>
+    </div>
+  </div>
+
+  <div class="track-detail">
+    <div class="track-card">
+      <h4>Investor Network</h4>
+      <p>Active relationships across Canada and the US, including top-tier Silicon Valley funds. Direct access to 60+ venture investors across North America, spanning pre-seed angels through institutional Series A.</p>
+    </div>
+    <div class="track-card">
+      <h4>Stage Depth</h4>
+      <p>Pre-Seed through Series A, with raises from $300K to $8M+. Deep experience in round sizing, valuation strategy, and deal structuring. Several companies advised across 2–3 consecutive rounds — from first capital to institutional close.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-eyebrow" style="color:var(--gold)">Get in Touch</p>
+  <h2>Ready to talk<br><strong style="color:var(--gold)">about your raise?</strong></h2>
+
+  <div class="contact-grid">
+    <div class="contact-left">
+      <p>Book a 1-on-1 to discuss your fundraising needs. We work with a focused set of founders — if there's a fit, we'll know quickly.</p>
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <span class="contact-info-label">Email</span>
+          <span class="contact-info-val">yvonne@ventera-partners.com</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">Working with</span>
+          <span class="contact-info-val">Pre-Seed through Series A founders across North America</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Jane">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Doe">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="jane@startup.com">
+      </div>
+      <div class="form-group">
+        <label>Company · Stage</label>
+        <input type="text" placeholder="Acme Inc. · Seed">
+      </div>
+      <div class="form-group">
+        <label>I'm interested in</label>
+        <select>
+          <option value="">Select a service</option>
+          <option>Strategy Diagnostic ($300)</option>
+          <option>Mock Investor Q&A ($500)</option>
+          <option>Materials Review ($1,500)</option>
+          <option>Pitch Deck Build ($1,500)</option>
+          <option>Financial Model Build ($1,500)</option>
+          <option>Investor Outreach System ($2,000)</option>
+          <option>3-Month Fundraising Sprint ($4,500 + 5%)</option>
+          <option>Pre-Readiness Retainer</option>
+          <option>Ongoing Strategic Retainer</option>
+          <option>Not sure yet — just exploring</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell us about your raise</label>
+        <textarea placeholder="Stage, sector, target raise amount, current traction, timeline..."></textarea>
+      </div>
+      <button class="form-submit" type="button">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ventera<span>.</span>Partners</div>
+  <nav class="footer-nav">
+    <a href="#investable">Why Ventera</a>
+    <a href="#services">Services</a>
+    <a href="#track">Track Record</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="footer-copy">© 2026 Ventera Partners. All rights reserved.</div>
+</footer>
+
+<script>
+  function switchTab(name, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
