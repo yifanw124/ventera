@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVZMKNTC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LPVZMKNTC1');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundraising Insights for Founders | Ventera Partners Blog</title>
+<meta name="description" content="Practical fundraising advice for pre-seed to Series A founders. Pitch decks, investor outreach, valuation strategy, data rooms, and more from Ventera Partners.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ventera-partners.com/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fundraising Insights for Founders | Ventera Partners Blog">
+<meta property="og:description" content="Practical fundraising advice for pre-seed to Series A founders. Pitch decks, investor outreach, valuation strategy, data rooms, and more.">
+<meta property="og:url" content="https://ventera-partners.com/blog/">
+<meta property="og:site_name" content="Ventera Partners">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fundraising Insights for Founders | Ventera Partners Blog">
+<meta name="twitter:description" content="Practical fundraising advice for pre-seed to Series A founders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:       #0B1628;
+    --navy-mid:   #1A3060;
+    --navy-deep:  #112447;
+    --gold:       #C9A84C;
+    --gold-light: #DDB96A;
+    --steel:      #7A8FA8;
+    --ice:        #D8E2F0;
+    --off-white:  #F0F4FA;
+    --white:      #FFFFFF;
+    --font-sans:  'IBM Plex Sans', system-ui, sans-serif;
+    --font-mono:  'IBM Plex Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--white);
+    color: var(--navy);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 68px;
+    background: rgba(11, 22, 40, 0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+
+  .nav-links a {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--ice);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
+
+  .nav-cta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy) !important;
+    background: var(--gold);
+    padding: 9px 20px;
+    border-radius: 2px;
+    opacity: 1 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* HERO BANNER */
+  .blog-hero {
+    background: var(--navy);
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .blog-hero-inner { position: relative; z-index: 1; max-width: 720px; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  .blog-hero h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .blog-hero h1 strong { font-weight: 600; color: var(--gold); }
+
+  .blog-hero p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--ice);
+    opacity: 0.7;
+    max-width: 560px;
+  }
+
+  /* BLOG GRID */
+  .blog-section {
+    padding: 80px 48px;
+    background: var(--white);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .post-card {
+    border: 1px solid var(--ice);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .post-card:hover {
+    border-color: rgba(201,168,76,0.4);
+    box-shadow: 0 4px 24px rgba(11,22,40,0.08);
+  }
+
+  .post-card-body {
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .post-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .post-card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.35;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .post-excerpt {
+    font-size: 14px;
+    color: var(--steel);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 24px;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--off-white);
+  }
+
+  .post-date {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--steel);
+    opacity: 0.6;
+    letter-spacing: 0.06em;
+  }
+
+  .post-read {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-deep);
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .footer-logo {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ice);
+    opacity: 0.45;
+  }
+  .footer-logo span { color: var(--gold); opacity: 0.65; }
+
+  .footer-copy { font-size: 12px; color: var(--ice); opacity: 0.28; }
+
+  .footer-nav { display: flex; gap: 24px; }
+  .footer-nav a {
+    font-size: 12px;
+    color: var(--ice);
+    opacity: 0.38;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .footer-nav a:hover { opacity: 0.75; }
+
+  @media (max-width: 960px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .blog-hero { padding: 100px 24px 60px; }
+    .blog-section { padding: 60px 24px; }
+    .blog-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Ventera<span>.</span>Partners</a>
+  <ul class="nav-links">
+    <li><a href="/#investable">Why Ventera</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#track">Track Record</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="nav-cta">Book a Call</a></li>
+  </ul>
+</nav>
+
+<div class="blog-hero">
+  <div class="blog-hero-inner">
+    <p class="eyebrow">Fundraising Insights</p>
+    <h1>Resources for founders<br>who want to raise <strong>well.</strong></h1>
+    <p>Practical, no-fluff guides on pitch decks, investor outreach, valuation, data rooms, and everything between your first deck and your close.</p>
+  </div>
+</div>
+
+<section class="blog-section">
+  <div class="blog-grid">
+
+    <a class="post-card" href="/blog/how-to-raise-a-pre-seed-round.html">
+      <div class="post-card-body">
+        <div class="post-tag">Pre-Seed Fundraising</div>
+        <h2>How to Raise a Pre-Seed Round: A Founder's Practical Guide</h2>
+        <p class="post-excerpt">Most pre-seed founders make the same mistakes: pitching too early, targeting the wrong investors, and underpricing their round. Here's what actually works at the earliest stage.</p>
+        <div class="post-meta">
+          <span class="post-date">June 2026</span>
+          <span class="post-read">8 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card" href="/blog/what-investors-look-for-in-a-pitch-deck.html">
+      <div class="post-card-body">
+        <div class="post-tag">Pitch Deck</div>
+        <h2>What Investors Actually Look for in a Pitch Deck</h2>
+        <p class="post-excerpt">A pitch deck is not a business plan. It's a hypothesis about why your company will return a fund. Here's how investors actually read decks — and what makes them say yes.</p>
+        <div class="post-meta">
+          <span class="post-date">June 2026</span>
+          <span class="post-read">7 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card" href="/blog/how-to-build-an-investor-data-room.html">
+      <div class="post-card-body">
+        <div class="post-tag">Due Diligence</div>
+        <h2>How to Build an Investor Data Room That Survives Diligence</h2>
+        <p class="post-excerpt">Most data rooms kill deals they could have saved. A well-built data room signals professionalism, reduces friction, and keeps investors moving. Here's exactly what to include.</p>
+        <div class="post-meta">
+          <span class="post-date">June 2026</span>
+          <span class="post-read">6 min read</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Ventera<span>.</span>Partners</div>
+  <nav class="footer-nav">
+    <a href="/">Home</a>
+    <a href="/#services">Services</a>
+    <a href="/#track">Track Record</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+  <div class="footer-copy">© 2026 Ventera Partners. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

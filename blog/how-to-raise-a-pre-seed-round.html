@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVZMKNTC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LPVZMKNTC1');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Raise a Pre-Seed Round: A Founder's Practical Guide | Ventera Partners</title>
+<meta name="description" content="Most pre-seed founders pitch too early, target the wrong investors, and underprice their round. This guide covers what actually works at the earliest stage of fundraising.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ventera-partners.com/blog/how-to-raise-a-pre-seed-round.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Raise a Pre-Seed Round: A Founder's Practical Guide">
+<meta property="og:description" content="Most pre-seed founders pitch too early, target the wrong investors, and underprice their round. Here's what actually works.">
+<meta property="og:url" content="https://ventera-partners.com/blog/how-to-raise-a-pre-seed-round.html">
+<meta property="og:site_name" content="Ventera Partners">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Raise a Pre-Seed Round: A Founder's Practical Guide">
+<meta name="twitter:description" content="Most pre-seed founders pitch too early, target the wrong investors, and underprice their round. Here's what actually works.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Raise a Pre-Seed Round: A Founder's Practical Guide",
+  "description": "Most pre-seed founders pitch too early, target the wrong investors, and underprice their round. This guide covers what actually works at the earliest stage of fundraising.",
+  "datePublished": "2026-06-01",
+  "dateModified": "2026-06-01",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ventera Partners",
+    "url": "https://ventera-partners.com"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ventera-partners.com/blog/how-to-raise-a-pre-seed-round.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:       #0B1628;
+    --navy-mid:   #1A3060;
+    --navy-deep:  #112447;
+    --gold:       #C9A84C;
+    --gold-light: #DDB96A;
+    --steel:      #7A8FA8;
+    --ice:        #D8E2F0;
+    --off-white:  #F0F4FA;
+    --white:      #FFFFFF;
+    --font-sans:  'IBM Plex Sans', system-ui, sans-serif;
+    --font-mono:  'IBM Plex Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--white);
+    color: var(--navy);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 68px;
+    background: rgba(11, 22, 40, 0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+
+  .nav-links a {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--ice);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
+
+  .nav-cta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy) !important;
+    background: var(--gold);
+    padding: 9px 20px;
+    border-radius: 2px;
+    opacity: 1 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* ARTICLE LAYOUT */
+  .article-header {
+    background: var(--navy);
+    padding: 120px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .article-header::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .article-header-inner {
+    position: relative; z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .breadcrumb a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    opacity: 0.65;
+    transition: opacity 0.2s;
+  }
+  .breadcrumb a:hover { opacity: 1; }
+  .breadcrumb-sep {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--steel);
+    opacity: 0.4;
+  }
+
+  .article-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+
+  .article-header h1 {
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .article-header h1 strong { font-weight: 600; }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .article-meta span {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ice);
+    opacity: 0.45;
+    letter-spacing: 0.06em;
+  }
+  .article-meta span + span::before {
+    content: '·';
+    margin-right: 20px;
+  }
+
+  /* ARTICLE BODY */
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 72px 48px 96px;
+  }
+
+  .article-body p {
+    font-size: 17px;
+    font-weight: 300;
+    color: #1a2a40;
+    line-height: 1.85;
+    margin-bottom: 24px;
+  }
+
+  .article-body h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-top: 52px;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .article-body h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-top: 36px;
+    margin-bottom: 12px;
+  }
+
+  .article-body ul, .article-body ol {
+    margin-bottom: 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .article-body ul li, .article-body ol li {
+    font-size: 17px;
+    font-weight: 300;
+    color: #1a2a40;
+    line-height: 1.75;
+    padding: 8px 0 8px 28px;
+    border-bottom: 1px solid var(--off-white);
+    position: relative;
+  }
+
+  .article-body ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    top: 10px;
+  }
+
+  .article-body ol { counter-reset: ol-counter; }
+  .article-body ol li { counter-increment: ol-counter; }
+  .article-body ol li::before {
+    content: counter(ol-counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    top: 10px;
+  }
+
+  .callout {
+    background: var(--off-white);
+    border-left: 3px solid var(--gold);
+    padding: 24px 28px;
+    margin: 36px 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .callout p {
+    font-size: 15px;
+    color: var(--navy-mid);
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1.75;
+  }
+
+  .callout strong { color: var(--navy); font-weight: 600; }
+
+  /* CTA BOX */
+  .article-cta {
+    background: var(--navy);
+    border-radius: 4px;
+    padding: 44px 40px;
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .article-cta-text h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .article-cta-text p {
+    font-size: 14px;
+    color: var(--ice);
+    opacity: 0.6;
+    margin-bottom: 0;
+    line-height: 1.6;
+    max-width: 440px;
+  }
+
+  .article-cta-btn {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 14px 24px;
+    border-radius: 2px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .article-cta-btn:hover { background: var(--gold-light); }
+
+  /* RELATED */
+  .related-section {
+    background: var(--off-white);
+    padding: 72px 48px;
+  }
+
+  .related-section h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 32px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .related-card {
+    background: var(--white);
+    border: 1px solid var(--ice);
+    border-radius: 4px;
+    padding: 28px 24px;
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.2s;
+  }
+  .related-card:hover { border-color: rgba(201,168,76,0.4); }
+
+  .related-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .related-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-deep);
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .footer-logo {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ice);
+    opacity: 0.45;
+  }
+  .footer-logo span { color: var(--gold); opacity: 0.65; }
+
+  .footer-copy { font-size: 12px; color: var(--ice); opacity: 0.28; }
+
+  .footer-nav { display: flex; gap: 24px; }
+  .footer-nav a {
+    font-size: 12px;
+    color: var(--ice);
+    opacity: 0.38;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .footer-nav a:hover { opacity: 0.75; }
+
+  @media (max-width: 960px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .article-header { padding: 100px 24px 56px; }
+    .article-body { padding: 48px 24px 72px; }
+    .article-cta { flex-direction: column; align-items: flex-start; }
+    .related-section { padding: 56px 24px; }
+    .related-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Ventera<span>.</span>Partners</a>
+  <ul class="nav-links">
+    <li><a href="/#investable">Why Ventera</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#track">Track Record</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="nav-cta">Book a Call</a></li>
+  </ul>
+</nav>
+
+<header class="article-header">
+  <div class="article-header-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/blog/">Blog</a>
+      <span class="breadcrumb-sep">/</span>
+      <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ice);opacity:0.4;">Pre-Seed Fundraising</span>
+    </nav>
+    <div class="article-tag">Pre-Seed Fundraising</div>
+    <h1>How to Raise a Pre-Seed Round:<br><strong>A Founder's Practical Guide</strong></h1>
+    <div class="article-meta">
+      <span>June 2026</span>
+      <span>8 min read</span>
+    </div>
+  </div>
+</header>
+
+<article class="article-body">
+
+  <p>The pre-seed round is the hardest raise you'll do — not because the amounts are large, but because you have the least leverage and the most to prove. Most founders spend months pitching and come away with nothing, not because their idea was wrong, but because they ran the process wrong.</p>
+
+  <p>This guide is built from patterns we've seen across 40+ companies at the earliest stages. It's direct, it skips the theory, and it covers what actually determines whether a pre-seed raise closes.</p>
+
+  <h2>1. Understand what a pre-seed round actually is</h2>
+
+  <p>A pre-seed round ($250K–$2M typically) is capital raised to get to a meaningful seed milestone — not to build a finished product, and not to prove the business. It's to prove enough that the next set of investors will take the meeting.</p>
+
+  <p>The question every pre-seed investor is asking is: <strong>if I give you this capital, can you get to a point where a better-resourced investor will fund the next round?</strong> Your entire pitch needs to answer that question.</p>
+
+  <div class="callout">
+    <p><strong>Common mistake:</strong> Pitching pre-seed investors on your long-term vision without showing a clear, achievable milestone for the next 12–18 months. They're not buying the vision — they're buying your ability to execute toward a fundable next step.</p>
+  </div>
+
+  <h2>2. Get the raise size and structure right before you pitch</h2>
+
+  <p>Founders consistently under-raise at pre-seed. If you're raising $300K when you need $600K to hit your seed milestone, you're setting yourself up to fail — not immediately, but 10 months from now when you're running on empty and trying to raise again from a weak position.</p>
+
+  <p>Before you pitch a single investor:</p>
+
+  <ul>
+    <li>Map out what your seed milestone actually requires in capital and time</li>
+    <li>Work backward: add 20% buffer for delays and unexpected costs</li>
+    <li>Decide whether you're doing a SAFE, convertible note, or priced round — and why</li>
+    <li>Set a valuation cap that gives early investors enough upside to say yes without diluting you to nothing</li>
+  </ul>
+
+  <p>Most first-time founders set their valuation cap based on what feels reasonable to them. Set it based on what makes the math work for the investor on the other side.</p>
+
+  <h2>3. Know who actually writes pre-seed checks</h2>
+
+  <p>One of the most time-consuming mistakes founders make is pitching Series A funds at pre-seed. Most institutional VCs don't write checks below $1M, and many don't invest before product-market fit. Pitching them at pre-seed is almost always a waste of time — for both parties.</p>
+
+  <p>At pre-seed, your actual investor universe is:</p>
+
+  <ul>
+    <li>Angels and operators who've built or backed companies in your space</li>
+    <li>Pre-seed-focused micro-VCs (funds under $50M that specifically invest at this stage)</li>
+    <li>Government programs — SR&amp;ED, IRAP, NRC, BDC, provincial programs (underused and dramatically underpitched)</li>
+    <li>Accelerator programs with funding attached (YC, Techstars, Creative Destruction Lab)</li>
+    <li>Family offices with early-stage mandates</li>
+  </ul>
+
+  <div class="callout">
+    <p><strong>Note on government funding:</strong> If you're building in Canada, non-dilutive government capital is one of the most underutilized tools available to early-stage founders. A well-structured SR&amp;ED claim or IRAP grant can extend your runway significantly without giving up equity — and can be stacked with angel investment.</p>
+  </div>
+
+  <h2>4. Build a list before you start pitching</h2>
+
+  <p>Most founders start pitching whoever they can get a meeting with. The founders who close rounds start by building a targeted list of 150–300 investors who:</p>
+
+  <ul>
+    <li>Have a stated thesis that includes your sector</li>
+    <li>Have written checks at your stage in the last 18 months</li>
+    <li>Are in the right geography (or explicitly invest cross-border)</li>
+    <li>Are not already invested in a direct competitor</li>
+  </ul>
+
+  <p>This list takes time to build properly. But it's the difference between running a process and running in circles. A cold email to the right person converts at 10x the rate of a warm intro to the wrong one.</p>
+
+  <h2>5. What your deck needs to do at pre-seed</h2>
+
+  <p>At pre-seed, you often don't have revenue, a full team, or proof that the market will pay. Your deck needs to do something harder: make an investor believe that <em>you</em> are the right person to build this, and that the problem is real enough to support a significant business.</p>
+
+  <p>The slides that matter most at pre-seed:</p>
+
+  <ul>
+    <li><strong>Problem:</strong> Is it painful enough and common enough? Does the founder clearly live in this problem?</li>
+    <li><strong>Founder/team:</strong> Why are you uniquely positioned to solve this? What's your unfair advantage?</li>
+    <li><strong>Solution + early traction:</strong> Even a few customers, waitlist signups, or letters of intent signal that the market is real</li>
+    <li><strong>Use of funds + milestone:</strong> What does this capital get you to, and why is that milestone fundable at the next stage?</li>
+  </ul>
+
+  <p>Market size slides are often overbuilt at pre-seed. A TAM/SAM/SOM slide with big numbers doesn't move investors the way a clear, believable path to the next milestone does.</p>
+
+  <h2>6. Run the raise like a process, not a series of one-off conversations</h2>
+
+  <p>The most common way pre-seed raises fall apart is through loss of momentum. A founder gets a few interested investors, slows down outreach to "focus on the hot leads," and three months later is back to square one.</p>
+
+  <p>Run a raise with discipline:</p>
+
+  <ul>
+    <li>Set a defined timeline (typically 8–12 weeks of active outreach)</li>
+    <li>Batch meetings so you're in the market simultaneously, not sequentially</li>
+    <li>Create a simple CRM — even a spreadsheet — to track every conversation, next step, and follow-up</li>
+    <li>Follow up every 7–10 days with something new: a milestone update, a new customer, a press mention</li>
+    <li>Create momentum: when one investor is close to committing, use that to create urgency with others</li>
+  </ul>
+
+  <h2>7. The lead investor problem</h2>
+
+  <p>Pre-seed rounds are harder to close than seed rounds in one specific way: everyone wants to follow someone else. Every angel and micro-VC wants to know who else is in, and no one wants to be first.</p>
+
+  <p>The fastest path through this is to identify one or two investors early who have the credibility to act as a lead — even informally. This often means accepting slightly less favorable terms from the lead in exchange for the signal their commitment sends to the rest of the round.</p>
+
+  <p>A warm introduction from someone they trust is worth more than any amount of polished materials. Prioritize getting into rooms through your network before going cold.</p>
+
+  <h2>The bottom line</h2>
+
+  <p>Pre-seed fundraising is a skill, and most founders are doing it for the first time. The founders who close rounds aren't always working on the best ideas — they're running a more disciplined process, targeting the right investors, and telling a story that makes the ask feel obvious.</p>
+
+  <p>If you're approaching your pre-seed raise, the most valuable thing you can do before your first meeting is get clear on your milestone, your raise structure, and your target investor list. Everything else flows from those three things.</p>
+
+  <div class="article-cta">
+    <div class="article-cta-text">
+      <h3>Working on your pre-seed raise?</h3>
+      <p>Book a 1-on-1 to walk through your raise structure, investor targeting, and where you might be leaving momentum on the table.</p>
+    </div>
+    <a href="https://calendly.com/yifanw124/1-on-1?month=2026-06" target="_blank" class="article-cta-btn">Book a Call →</a>
+  </div>
+
+</article>
+
+<section class="related-section">
+  <h2>Related reading</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/what-investors-look-for-in-a-pitch-deck.html">
+      <div class="related-tag">Pitch Deck</div>
+      <h3>What Investors Actually Look for in a Pitch Deck</h3>
+    </a>
+    <a class="related-card" href="/blog/how-to-build-an-investor-data-room.html">
+      <div class="related-tag">Due Diligence</div>
+      <h3>How to Build an Investor Data Room That Survives Diligence</h3>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Ventera<span>.</span>Partners</div>
+  <nav class="footer-nav">
+    <a href="/">Home</a>
+    <a href="/#services">Services</a>
+    <a href="/#track">Track Record</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+  <div class="footer-copy">© 2026 Ventera Partners. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
